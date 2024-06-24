@@ -26,11 +26,25 @@ layout = """
 
 
 def index(request):
-    return render(request, 'index.html')
+    estudiantes = [ 'Isabella Caballero', 
+                    'Alejandro Hermitaño',
+                    'Joan Palomino',
+                    'Pierre Bernaola']
+
+
+    return render(request,'index.html', {
+        'titulo':'Inicio',
+        'mensaje':'Proyecto Web Con DJango',
+        'estudiantes': estudiantes
+    })
 
 
 def saludo(request):
-    return render(request,'saludo.html')
+    return render(request,'saludo.html',{
+        'titulo':'Saludo',
+        'autor_saludo':'Mg. Flor Elizabeth Cerdán León'
+    }
+)
 
 def rango(request):
     a = 10
